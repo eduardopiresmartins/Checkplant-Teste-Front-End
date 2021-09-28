@@ -4,31 +4,32 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Checkplant - Teste Front-End</title>
   <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
   <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
   <meta name="viewport" content="initial-scale=1.0, width=device-width" />
 </head>
 
 <body>
-  <h1>Checkplant-Teste-Front-End</h1>
-  <html>
-  <head>
-    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-    <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js"
-    type="text/javascript" charset="utf-8"></script>
-    <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js"
-    type="text/javascript" charset="utf-8"></script>
-  </head>
-  <body>
-    <div style="width: 640px; height: 480px" id="mapContainer"></div>
-    <script src="rotas.js">
-      
-      
-    </script>
-  </body>
-</html>
+  <h1>Checkplant - Teste Front-End</h1>
+  <form action="" id="form">
+    <input type="text" id="endereco">
+    <input type="submit">
+  </form>
+  <div style="width: 640px; height: 480px" id="mapContainer">
 
+  </div>
+  <script src="app.js"></script>
+  <script>
+    const form = document.getElementById('form')
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      const input = document.getElementById("endereco").value + ", Brazil"
+      geocodingParams = { searchText: input };
+      geocoder.geocode(geocodingParams, onResult);
+
+    })
+  </script>
 </body>
 
 </html>
